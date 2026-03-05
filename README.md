@@ -97,7 +97,7 @@ plotly
 ## Project Structure
 
 ```
-black_scholes.py   # Full model, Greeks, IV solver, Streamlit dashboard
+app.py   # Full model, Greeks, IV solver, Streamlit dashboard
 README.md
 requirements.txt
 ```
