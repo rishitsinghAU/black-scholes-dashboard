@@ -1,4 +1,4 @@
-Black-Scholes Options Pricing Dashboard
+# Black-Scholes Options Pricing Dashboard
 
 This is an interactive options pricing dashboard built from first principles, implementing the Black-Scholes model for European options with full Greeks computation and a Newton-Raphson implied volatility solver!
 
@@ -12,13 +12,17 @@ What Does It Do?
 - Visualises the full option pricing surface** across stock price × volatility as a heatmap
 - Displays a realistic volatility smile** with downside skew, illustrating where Black-Scholes breaks down in real markets
 
-The Model
+## The Model
 
 At the core is the Black-Scholes PDE, which assumes stock prices follow geometric Brownian motion:
 
 ```
 dS = μS dt + σS dW
 ```
+
+$$
+dS = \mu S\;dt+\sigma S\;dW
+$$
 
 This leads to the closed-form pricing formulas:
 
@@ -42,7 +46,7 @@ Where `N(·)` is the cumulative standard normal distribution.
 
 Vega is divided by 100 (sensitivity per percentage point, not per unit) and Theta is divided by 365 (daily decay, not annual). These match the typical industry convention!
 
-Implied Volatility Solver
+## Implied Volatility Solver
 
 Rather than plugging in volatility to get a price, real markets work in reverse, in that traders will observe a market price and solve backwards for the volatility that produced it. This is the implied volatility (IV).
 
@@ -54,13 +58,13 @@ The solver uses Newton-Raphson iteration:
 
 Each step adjusts the volatility estimate by the pricing error divided by Vega (the slope of the price-vol relationship), converging to the solution within microseconds!
 
-Volatility Smile
+## Volatility Smile
 
 In a perfect Black-Scholes world, IV would be flat across all strikes. In reality however it is not, out-of-the-money puts trade at elevated IV because investors pay a **premium** for crash protection. This creates the characteristic volatility skew (sometimes called the smile :).
 
 The dashboard simulates a realistic skew since Black-Scholes itself cannot generate one, this is one of the model's known structural limitations.
 
-Model Assumptions & Limitations
+## Model Assumptions & Limitations
 
 Black-Scholes makes several simplifying assumptions that real markets routinely violate:
 
@@ -74,7 +78,7 @@ These limitations are features. Understanding where the model breaks down will b
 
 ---
 
-Installation
+# Installation
 
 ```bash
 git clone https://github.com/rishitsinghAU/black-scholes-dashboard
@@ -83,7 +87,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-**requirements.txt**
+### requirements.txt**
 ```
 numpy
 pandas
@@ -102,7 +106,7 @@ README.md
 requirements.txt
 ```
 
-Learning Notes
+### Learning Notes
 
 This project was built as a personal learning exercise to better understand the Black-Scholes model, option Greeks, and implied volatility. Some concepts were learned from lectures, textbooks, and online resources while building the dashboard.
 
