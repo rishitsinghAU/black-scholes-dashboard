@@ -83,7 +83,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-### requirements.txt**
+### requirements.txt
 ```
 numpy
 pandas
