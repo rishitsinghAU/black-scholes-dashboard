@@ -17,7 +17,7 @@ What Does It Do?
 At the core is the Black-Scholes PDE, which assumes stock prices follow geometric Brownian motion:
 
 $$
-dS = \mu S\;dt+\sigma S\;dW
+dS = \mu S\,dt+\sigma S\,dW
 $$
 
 This leads to the closed-form pricing formulas:
