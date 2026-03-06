@@ -16,10 +16,6 @@ What Does It Do?
 
 At the core is the Black-Scholes PDE, which assumes stock prices follow geometric Brownian motion:
 
-```
-dS = μS dt + σS dW
-```
-
 $$
 dS = \mu S\;dt+\sigma S\;dW
 $$
